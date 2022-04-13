@@ -5,6 +5,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <ApplicationIcon />
     <StartupObject />
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>

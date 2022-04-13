@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace CodeCrownTool
 {
@@ -89,7 +90,8 @@ namespace CodeCrownTool
             var crownLba = GetCrownLba();
             byte[] sec = SecuritySector.GenerateSecuritySector(cid, csd, ssr);
             disk.SeekSector((int)crownLba);
-            disk.WriteSectors(1, sec, 0);
+            if (disk.WriteSectors(1, sec, 0) != sec.Length)
+                throw new IOException("Failed to write data.");
         }
 
         public bool VerifyCodeCrown()
@@ -110,7 +112,8 @@ namespace CodeCrownTool
 
             var crownLba = GetCrownLba();
             disk.SeekSector((int)(crownLba + 1));
-            disk.WriteSectors(data.Length / 0x200, data, 0);
+            if (disk.WriteSectors(data.Length / 0x200, data, 0) != data.Length)
+                throw new IOException("Failed to write data.");
         }
 
         public byte[] DumpData()

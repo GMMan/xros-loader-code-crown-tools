@@ -49,7 +49,7 @@ namespace CodeCrownTool.Windows
             try
             {
                 DiskDevice.STORAGE_DEVICE_NUMBER devNumber = volume.QueryDeviceNumber();
-                disk = new DiskDevice(devNumber.PhysicalDrive, true);
+                disk = new DiskDevice(devNumber.PhysicalDrive, false);
             }
             catch
             {

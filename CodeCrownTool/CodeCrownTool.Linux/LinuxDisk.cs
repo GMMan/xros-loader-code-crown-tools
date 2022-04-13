@@ -44,7 +44,7 @@ namespace CodeCrownTool.Linux
         public LinuxDisk(string path)
         {
             if (string.IsNullOrEmpty(path)) throw new ArgumentNullException(nameof(path));
-            fd = Syscall.open(path, OpenFlags.O_RDONLY);
+            fd = Syscall.open(path, OpenFlags.O_RDWR);
             if (fd == -1) {
                 var errno = Stdlib.GetLastError();
                 throw new IOException(UnixMarshal.GetErrorDescription(errno));
