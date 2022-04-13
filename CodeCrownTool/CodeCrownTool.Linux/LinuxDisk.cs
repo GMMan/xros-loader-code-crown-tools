@@ -139,7 +139,7 @@ namespace CodeCrownTool.Linux
         /// <inheritdoc/>
         public void GetCidCsdSsr(out string cid, out string csd, out string ssr)
         {
-            string sysfsPath = "/sys/block/" + DisplayName.Substring("/dev/".Length);
+            string sysfsPath = Path.Combine("/sys/block", DisplayName.Substring("/dev/".Length), "device");
             if (!Directory.Exists(sysfsPath)) throw new DirectoryNotFoundException($"Cannot find sysfs path \"{sysfsPath}\".");
 
             cid = File.ReadAllText(Path.Combine(sysfsPath, "cid")).TrimEnd();
