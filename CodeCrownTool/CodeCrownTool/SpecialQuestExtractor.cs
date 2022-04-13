@@ -13,6 +13,7 @@ namespace CodeCrownTool
     {
         static readonly Dictionary<string, long> QUEST_OFFSETS = new Dictionary<string, long>
         {
+            ["256098252D746E7885994181107227439AC9C18EE3442F308264F142F1FC78B2"] = 0x3b6c8, // DCC Special Quest 01
             ["26FE8ED953F2F1E47C9BD366D6A52079C39A2D96973454368813D08CBAA354A7"] = 0x3b648, // DCC Special Quest 02
         };
 
