@@ -1,3 +1,4 @@
+from binascii import hexlify
 import machine
 import os
 import sdcard
@@ -158,6 +159,10 @@ def write_security_sector():
         print('Error getting SSR')
         return -ERR_REG_READ_ERROR
     card.readinto(ssr)
+
+    print('CID: {}'.format(hexlify(cid)))
+    print('CSD: {}'.format(hexlify(csd)))
+    print('SSR: {}'.format(hexlify(ssr)))
 
     lba = get_crown_lba(card)
     if (lba < 0):
