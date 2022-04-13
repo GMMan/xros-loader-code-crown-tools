@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeCrownTool.Linux\CodeCrownTool.Linux.csproj" />
+    <ProjectReference Include="..\CodeCrownTool.Windows\CodeCrownTool.Windows.csproj" />
+    <ProjectReference Include="..\CodeCrownTool\CodeCrownTool.csproj" />
+  </ItemGroup>
+
+</Project>
