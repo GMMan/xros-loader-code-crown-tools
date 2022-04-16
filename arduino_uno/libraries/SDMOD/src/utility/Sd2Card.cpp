@@ -530,7 +530,6 @@ uint8_t Sd2Card::readSSR(uint8_t *ssr) {
   spiRec();
 
   if (!waitStartBlock()) {
-    Serial.println("waitStartBlock() failed");
     goto fail;
   }
   // transfer data
