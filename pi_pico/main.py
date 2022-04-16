@@ -154,7 +154,8 @@ def write_security_sector():
     card.readinto(csd)
 
     # Read SSR
-    if card.cmd(55, 0, 0) != 0 or card.cmd(13, 0, 0, 0, False) != 0:
+    # Need to consume one extra byte for response type R2
+    if card.cmd(55, 0, 0) != 0 or card.cmd(13, 0, 0, 1, False) != 0:
         spi_cs.value(1)
         print('Error getting SSR')
         return -ERR_REG_READ_ERROR

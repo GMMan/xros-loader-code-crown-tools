@@ -45,7 +45,7 @@ Software setup
      once the Pico shows up on your computer as a USB drive.
    - Drag the .uf2 firmware you have downloaded to the USB drive, and the
      Pico will install the firmware and reboot
-2. Upload the code in the [firmware](firmware) directory to the Pico
+2. Upload the code in this directory to the Pico
    - I use [Thonny](https://thonny.org/). After you install it, open it up
      and click the button at the bottom right of the screen. Select
      `MicroPython (Raspberry Pi Pico)`.
