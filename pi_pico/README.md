@@ -81,7 +81,7 @@ will stay solid, otherwise it will blink off an error code:
 - 6 blinks: CSD version mismatch: the Xros Loader will probably not recognize
   this card
 
-More detailed error messages are printed to the default UART port. You can
+More detailed error messages are printed to USB serial port. You can
 also view the messages in Thonny.
 
 If your SD breakout board does not have a
