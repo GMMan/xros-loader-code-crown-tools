@@ -221,6 +221,7 @@ namespace CodeCrownTool
     {
         [Argument(1, "dataPath", "Path to file to load from")]
         [FileExists]
+        [Required]
         public string DataPath { get; set; }
 
         Program Parent { get; set; }
